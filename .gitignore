@@ -6,3 +6,9 @@
 node_modules/Analyses des données
 /Figures/
 /Documents/
+/etc/
+/Include/
+/Lib/
+/Scripts/
+/share/
+*.pyvenv.cfg
