@@ -68,3 +68,34 @@ def main(database):
     """, unsafe_allow_html=True)
     statistic = database.describe()
     st.write(statistic)
+    
+    plot_reg_and_pair(database_cleaned)
+
+def plot_reg_and_pair(database):
+    # Display regplot
+    st.markdown("""
+        <h2> DataViz : Regplot</h2>
+        <br>
+    """, unsafe_allow_html=True)
+    st.write("The regression plot below shows the linear relationship between two chosen variables.")
+
+    # Select columns for regplot
+    numeric_columns = database.select_dtypes(include='number').columns.tolist()
+    x_col = st.selectbox("Choose X axis for regplot", numeric_columns, index=0)
+    y_col = st.selectbox("Choose Y axis for regplot", numeric_columns, index=1)
+
+    fig, ax = plt.subplots(figsize=(18,5))
+    sns.regplot(x=x_col, y=y_col, data=database, ax=ax, color='purple')
+    st.pyplot(fig)
+
+    # Display pairplot
+    st.markdown("""
+        <h2> DataViz : Pairplot</h2>
+        <br>
+    """, unsafe_allow_html=True)    
+    st.write("The pair plot shows scatter plots and histograms for each numeric variable pair in the dataset.")
+
+    # Generate pairplot for all numeric columns
+    pair_fig = sns.pairplot(database[numeric_columns])
+    st.pyplot(pair_fig)
+
