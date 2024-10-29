@@ -1,0 +1,8 @@
+# Ignorer les fichiers
+*.pyvenv.cfg
+
+# Ignorer les dossiers
+/etc/
+/Include/
+/Lib/
+/share/

@@ -1,0 +1,36 @@
+my_streamlit_app/
+│
+├── app.py                        # Point d'entrée principal pour lancer l'application Streamlit
+│
+├── pages/                         # Dossier pour les pages de l'application (multi-pages)
+│   ├── home.py                    # Page d'accueil
+│   ├── analytics.py               # Page pour les analyses et graphiques
+│   ├── predictions.py             # Page pour les prédictions et les modèles
+│   └── about.py                   # Page d'informations sur le projet ou contact
+│
+├── utils/                         # Dossier pour les fonctions utilitaires
+│   ├── data_loader.py             # Fonctions de chargement de données (CSV, base de données, etc.)
+│   ├── model_loader.py            # Chargement et gestion des modèles ML
+│   ├── session_manager.py         # Gestion de l’état de session utilisateur (st.session_state)
+│   └── helpers.py                 # Fonctions auxiliaires et helpers divers
+│
+├── models/                        # Dossier pour les modèles Machine Learning
+│   ├── model.pkl                  # Modèle entraîné sauvegardé avec pickle ou joblib
+│   └── model_utils.py             # Code spécifique au modèle (prétraitement des données, prédiction, etc.)
+│
+├── assets/                        # Dossier pour les fichiers statiques
+│   ├── styles.css                 # Fichier CSS pour le design personnalisé
+│   ├── logo.png                   # Logo ou autres images pour l’interface utilisateur
+│   └── scripts/                   # Scripts JavaScript personnalisés, si nécessaire
+│
+├── data/                          # Dossier pour les fichiers de données statiques ou initiales
+│   ├── initial_data.csv           # Données d'exemple ou de référence
+│   └── user_data.pkl              # Données utilisateur sauvegardées, si applicable
+│
+├── config/                        # Dossier pour les configurations de l’application
+│   ├── settings.yaml              # Fichier de configuration (ex. paramètres de l'application)
+│   └── model_params.json          # Paramètres spécifiques aux modèles ML
+│
+├── README.md                      # Documentation du projet
+│
+└── requirements.txt               # Liste des dépendances Python pour le projet
